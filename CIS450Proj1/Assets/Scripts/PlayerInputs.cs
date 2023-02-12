@@ -14,9 +14,14 @@ public class PlayerInputs : MonoBehaviour
     InputAction walk, run, smell, water;
 
     bool isRunning = false;
+    bool canMove = true;
     Vector2 moveDirection;
     [SerializeField] float baseSpeed;
     [SerializeField] float runSpeed;
+
+    Flower currentFlower;
+
+    public bool CanMove { get => canMove; set => canMove = value; }
 
     /// <summary>
     /// Sets up inputs on Awake
@@ -57,19 +62,33 @@ public class PlayerInputs : MonoBehaviour
             moveVelocity = moveDirection * baseSpeed * Time.deltaTime;
         }
 
-        transform.Translate(moveVelocity);
+        if (CanMove)
+        {
+            transform.Translate(moveVelocity);
+        }
     }
 
     private void Smell()
     {
-        Debug.Log("A flower was smelt!");
-        // Actual functionallity to be added later
+        if (currentFlower != null)
+        {
+            CanMove = false;
+            currentFlower.SmellFlower();
+        }
     }
 
     private void Water()
     {
         Debug.Log("A flower was watered!");
         // Actual functionallity to be added later
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Flower"))
+        {
+            currentFlower = collision.gameObject.GetComponent<Flower>();
+        }
     }
 
     /// <summary>

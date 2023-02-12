@@ -154,6 +154,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "MiniGameActions",
+            "id": "d2a36738-6bcd-4ada-b420-d9a931d439b0",
+            "actions": [
+                {
+                    "name": "StopTimingBar",
+                    "type": "Button",
+                    "id": "809dee25-ecf9-4fe0-96a2-5622d970f92a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "391dc69c-e008-4056-addb-0fe8035924c2",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopTimingBar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

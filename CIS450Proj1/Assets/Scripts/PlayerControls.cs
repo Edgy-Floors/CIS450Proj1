@@ -176,6 +176,34 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""MiniGameActions"",
+            ""id"": ""d2a36738-6bcd-4ada-b420-d9a931d439b0"",
+            ""actions"": [
+                {
+                    ""name"": ""StopTimingBar"",
+                    ""type"": ""Button"",
+                    ""id"": ""809dee25-ecf9-4fe0-96a2-5622d970f92a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""391dc69c-e008-4056-addb-0fe8035924c2"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StopTimingBar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -186,6 +214,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_BasicActions_Run = m_BasicActions.FindAction("Run", throwIfNotFound: true);
         m_BasicActions_Smell = m_BasicActions.FindAction("Smell", throwIfNotFound: true);
         m_BasicActions_Water = m_BasicActions.FindAction("Water", throwIfNotFound: true);
+        // MiniGameActions
+        m_MiniGameActions = asset.FindActionMap("MiniGameActions", throwIfNotFound: true);
+        m_MiniGameActions_StopTimingBar = m_MiniGameActions.FindAction("StopTimingBar", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -298,11 +329,48 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public BasicActionsActions @BasicActions => new BasicActionsActions(this);
+
+    // MiniGameActions
+    private readonly InputActionMap m_MiniGameActions;
+    private IMiniGameActionsActions m_MiniGameActionsActionsCallbackInterface;
+    private readonly InputAction m_MiniGameActions_StopTimingBar;
+    public struct MiniGameActionsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MiniGameActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @StopTimingBar => m_Wrapper.m_MiniGameActions_StopTimingBar;
+        public InputActionMap Get() { return m_Wrapper.m_MiniGameActions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MiniGameActionsActions set) { return set.Get(); }
+        public void SetCallbacks(IMiniGameActionsActions instance)
+        {
+            if (m_Wrapper.m_MiniGameActionsActionsCallbackInterface != null)
+            {
+                @StopTimingBar.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.OnStopTimingBar;
+                @StopTimingBar.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.OnStopTimingBar;
+                @StopTimingBar.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.OnStopTimingBar;
+            }
+            m_Wrapper.m_MiniGameActionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @StopTimingBar.started += instance.OnStopTimingBar;
+                @StopTimingBar.performed += instance.OnStopTimingBar;
+                @StopTimingBar.canceled += instance.OnStopTimingBar;
+            }
+        }
+    }
+    public MiniGameActionsActions @MiniGameActions => new MiniGameActionsActions(this);
     public interface IBasicActionsActions
     {
         void OnWalk(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnSmell(InputAction.CallbackContext context);
         void OnWater(InputAction.CallbackContext context);
+    }
+    public interface IMiniGameActionsActions
+    {
+        void OnStopTimingBar(InputAction.CallbackContext context);
     }
 }
