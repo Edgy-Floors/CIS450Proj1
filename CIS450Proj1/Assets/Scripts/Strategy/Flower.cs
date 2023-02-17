@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
-    ISmellBehavior smellBehavior = new TimingFlower();
+    SmellBehavior smellBehavior;
+
+    private void Awake()
+    {
+        smellBehavior = GetComponent<SmellBehavior>();
+    }
 
     public void SmellFlower()
     {
-        smellBehavior.Smell();
+        if (smellBehavior != null)
+        {
+            smellBehavior.Smell();
 
-        Debug.Log("A flower was smelt");
+            Debug.Log("A flower was smelt");
+        }
     }
 }

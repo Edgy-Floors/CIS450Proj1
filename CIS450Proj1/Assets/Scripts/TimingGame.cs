@@ -38,22 +38,27 @@ public class TimingGame : MonoBehaviour
 
     private void StopMovingBar()
     {
-        movingBarScript.CanMove = false;
-
-        if (Mathf.Abs(Vector3.Distance(targetZone.transform.position, movingBar.transform.position)) <= 0.5f)
+        if (movingBarScript.CanMove)
         {
-            Debug.Log("You won the timeing game!");
-        }
-        else
-        {
-            Debug.Log("You lost the timing game");
-        }
+            movingBarScript.CanMove = false;
 
-        playerInputs.CanMove = true;
+            if (Mathf.Abs(Vector3.Distance(targetZone.transform.position, movingBar.transform.position)) <= 0.5f)
+            {
+                // call script to add points
 
-        background.SetActive(false);
-        movingBar.SetActive(false);
-        targetZone.SetActive(false);
+                Debug.Log("You won the timeing game!");
+            }
+            else
+            {
+                Debug.Log("You lost the timing game");
+            }
+
+            playerInputs.CanMove = true;
+
+            background.SetActive(false);
+            movingBar.SetActive(false);
+            targetZone.SetActive(false);
+        }
     }
 
     private void Update()

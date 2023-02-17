@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimingFlower : SmellBehavior
+public class TargetFlower : SmellBehavior
 {
     bool hasBeenSmelt = false;
 
@@ -10,7 +10,7 @@ public class TimingFlower : SmellBehavior
     {
         if (!hasBeenSmelt)
         {
-            TimingGame tg = GameObject.FindGameObjectWithTag("GameController").GetComponent<TimingGame>();
+            TargetGame tg = GameObject.FindGameObjectWithTag("GameController").GetComponent<TargetGame>();
 
             if (tg != null)
             {
@@ -19,7 +19,7 @@ public class TimingFlower : SmellBehavior
 
             hasBeenSmelt = true;
 
-            Debug.Log("Timing mini-game started");
+            Debug.Log("Target mini-game started");
         }
     }
 }
