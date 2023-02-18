@@ -189,6 +189,87 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""1Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""adf1b1a8-950d-482d-aa53-da9f19a04c17"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""2Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c70c9bb-eba1-4d43-bfe9-5b8968f840ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""3Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""4b85c83a-4d27-44fd-8331-3e851edcb6bd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""4Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""092c15fc-ba55-4cb1-a981-578178aa356e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""5Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c58027b-b0e6-48fc-b6bb-ed841c48fad5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""6Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""e8957050-d5a6-4f71-8e4f-954180f9c1a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""7Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""7c59ee1d-a0a6-46a3-9928-370ac0830f38"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""8Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""009ac0b5-4757-405c-b729-9a9648e9544d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""9Key"",
+                    ""type"": ""Button"",
+                    ""id"": ""229ad331-05b0-4f40-a9f0-d3c8b71ee1f1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -200,6 +281,105 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""StopTimingBar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6680bd38-9c7c-4d96-ae4f-f7ef84ead2f6"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""1Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9df26c5d-66a8-47d3-8d2e-baddf4fe9a82"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""2Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d34a8aaa-d40d-453c-8b03-c612fea3d509"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""3Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54699ecf-2405-419b-b913-ec34adef0b09"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""4Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2261fdfe-04a8-4e15-b1d0-33a9c6519ab2"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""5Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""538babb4-e0b2-43e9-b5c7-3c1edd5a033b"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""6Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48db1b35-8c06-4042-9fa6-22495b03ee13"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""7Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c52dbafb-408a-4e3c-8e2b-8a4203eacdae"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""8Key"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a7c3a87-680b-43d7-93d1-358bd72c432b"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""9Key"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -217,6 +397,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // MiniGameActions
         m_MiniGameActions = asset.FindActionMap("MiniGameActions", throwIfNotFound: true);
         m_MiniGameActions_StopTimingBar = m_MiniGameActions.FindAction("StopTimingBar", throwIfNotFound: true);
+        m_MiniGameActions__1Key = m_MiniGameActions.FindAction("1Key", throwIfNotFound: true);
+        m_MiniGameActions__2Key = m_MiniGameActions.FindAction("2Key", throwIfNotFound: true);
+        m_MiniGameActions__3Key = m_MiniGameActions.FindAction("3Key", throwIfNotFound: true);
+        m_MiniGameActions__4Key = m_MiniGameActions.FindAction("4Key", throwIfNotFound: true);
+        m_MiniGameActions__5Key = m_MiniGameActions.FindAction("5Key", throwIfNotFound: true);
+        m_MiniGameActions__6Key = m_MiniGameActions.FindAction("6Key", throwIfNotFound: true);
+        m_MiniGameActions__7Key = m_MiniGameActions.FindAction("7Key", throwIfNotFound: true);
+        m_MiniGameActions__8Key = m_MiniGameActions.FindAction("8Key", throwIfNotFound: true);
+        m_MiniGameActions__9Key = m_MiniGameActions.FindAction("9Key", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -334,11 +523,29 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_MiniGameActions;
     private IMiniGameActionsActions m_MiniGameActionsActionsCallbackInterface;
     private readonly InputAction m_MiniGameActions_StopTimingBar;
+    private readonly InputAction m_MiniGameActions__1Key;
+    private readonly InputAction m_MiniGameActions__2Key;
+    private readonly InputAction m_MiniGameActions__3Key;
+    private readonly InputAction m_MiniGameActions__4Key;
+    private readonly InputAction m_MiniGameActions__5Key;
+    private readonly InputAction m_MiniGameActions__6Key;
+    private readonly InputAction m_MiniGameActions__7Key;
+    private readonly InputAction m_MiniGameActions__8Key;
+    private readonly InputAction m_MiniGameActions__9Key;
     public struct MiniGameActionsActions
     {
         private @PlayerControls m_Wrapper;
         public MiniGameActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @StopTimingBar => m_Wrapper.m_MiniGameActions_StopTimingBar;
+        public InputAction @_1Key => m_Wrapper.m_MiniGameActions__1Key;
+        public InputAction @_2Key => m_Wrapper.m_MiniGameActions__2Key;
+        public InputAction @_3Key => m_Wrapper.m_MiniGameActions__3Key;
+        public InputAction @_4Key => m_Wrapper.m_MiniGameActions__4Key;
+        public InputAction @_5Key => m_Wrapper.m_MiniGameActions__5Key;
+        public InputAction @_6Key => m_Wrapper.m_MiniGameActions__6Key;
+        public InputAction @_7Key => m_Wrapper.m_MiniGameActions__7Key;
+        public InputAction @_8Key => m_Wrapper.m_MiniGameActions__8Key;
+        public InputAction @_9Key => m_Wrapper.m_MiniGameActions__9Key;
         public InputActionMap Get() { return m_Wrapper.m_MiniGameActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -351,6 +558,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @StopTimingBar.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.OnStopTimingBar;
                 @StopTimingBar.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.OnStopTimingBar;
                 @StopTimingBar.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.OnStopTimingBar;
+                @_1Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_1Key;
+                @_1Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_1Key;
+                @_1Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_1Key;
+                @_2Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_2Key;
+                @_2Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_2Key;
+                @_2Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_2Key;
+                @_3Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_3Key;
+                @_3Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_3Key;
+                @_3Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_3Key;
+                @_4Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_4Key;
+                @_4Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_4Key;
+                @_4Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_4Key;
+                @_5Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_5Key;
+                @_5Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_5Key;
+                @_5Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_5Key;
+                @_6Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_6Key;
+                @_6Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_6Key;
+                @_6Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_6Key;
+                @_7Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_7Key;
+                @_7Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_7Key;
+                @_7Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_7Key;
+                @_8Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_8Key;
+                @_8Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_8Key;
+                @_8Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_8Key;
+                @_9Key.started -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_9Key;
+                @_9Key.performed -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_9Key;
+                @_9Key.canceled -= m_Wrapper.m_MiniGameActionsActionsCallbackInterface.On_9Key;
             }
             m_Wrapper.m_MiniGameActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -358,6 +592,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @StopTimingBar.started += instance.OnStopTimingBar;
                 @StopTimingBar.performed += instance.OnStopTimingBar;
                 @StopTimingBar.canceled += instance.OnStopTimingBar;
+                @_1Key.started += instance.On_1Key;
+                @_1Key.performed += instance.On_1Key;
+                @_1Key.canceled += instance.On_1Key;
+                @_2Key.started += instance.On_2Key;
+                @_2Key.performed += instance.On_2Key;
+                @_2Key.canceled += instance.On_2Key;
+                @_3Key.started += instance.On_3Key;
+                @_3Key.performed += instance.On_3Key;
+                @_3Key.canceled += instance.On_3Key;
+                @_4Key.started += instance.On_4Key;
+                @_4Key.performed += instance.On_4Key;
+                @_4Key.canceled += instance.On_4Key;
+                @_5Key.started += instance.On_5Key;
+                @_5Key.performed += instance.On_5Key;
+                @_5Key.canceled += instance.On_5Key;
+                @_6Key.started += instance.On_6Key;
+                @_6Key.performed += instance.On_6Key;
+                @_6Key.canceled += instance.On_6Key;
+                @_7Key.started += instance.On_7Key;
+                @_7Key.performed += instance.On_7Key;
+                @_7Key.canceled += instance.On_7Key;
+                @_8Key.started += instance.On_8Key;
+                @_8Key.performed += instance.On_8Key;
+                @_8Key.canceled += instance.On_8Key;
+                @_9Key.started += instance.On_9Key;
+                @_9Key.performed += instance.On_9Key;
+                @_9Key.canceled += instance.On_9Key;
             }
         }
     }
@@ -372,5 +633,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IMiniGameActionsActions
     {
         void OnStopTimingBar(InputAction.CallbackContext context);
+        void On_1Key(InputAction.CallbackContext context);
+        void On_2Key(InputAction.CallbackContext context);
+        void On_3Key(InputAction.CallbackContext context);
+        void On_4Key(InputAction.CallbackContext context);
+        void On_5Key(InputAction.CallbackContext context);
+        void On_6Key(InputAction.CallbackContext context);
+        void On_7Key(InputAction.CallbackContext context);
+        void On_8Key(InputAction.CallbackContext context);
+        void On_9Key(InputAction.CallbackContext context);
     }
 }
