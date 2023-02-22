@@ -53,6 +53,7 @@ public class MemoryGame : MonoBehaviour
         }
 
         memorySequenceText.enabled = true;
+        memorySequenceText.text = "Remember the Following Sequence:\n";
 
         StartCoroutine(RevealSequence());
     }
