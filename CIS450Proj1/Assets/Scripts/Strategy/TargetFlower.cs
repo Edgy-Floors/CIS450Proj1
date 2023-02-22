@@ -6,6 +6,11 @@ public class TargetFlower : SmellBehavior
 {
     bool hasBeenSmelt = false;
 
+    private void Awake()
+    {
+        smellBehaviorIndex = 1;
+    }
+
     public override void Smell()
     {
         if (!hasBeenSmelt)

@@ -6,6 +6,11 @@ public class TimingFlower : SmellBehavior
 {
     bool hasBeenSmelt = false;
 
+    private void Awake()
+    {
+        smellBehaviorIndex = 0;
+    }
+
     public override void Smell()
     {
         if (!hasBeenSmelt)

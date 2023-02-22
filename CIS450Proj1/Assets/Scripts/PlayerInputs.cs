@@ -80,7 +80,11 @@ public class PlayerInputs : MonoBehaviour
     private void Water()
     {
         Debug.Log("A flower was watered!");
-        // Actual functionallity to be added later
+        
+        if (currentFlower != null)
+        {
+            currentFlower.UpdateSmellBehavior();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -6,6 +6,11 @@ public class MemoryFlower : SmellBehavior
 {
     bool hasBeenSmelt = false;
 
+    private void Awake()
+    {
+        smellBehaviorIndex = 2;
+    }
+
     public override void Smell()
     {
         if (!hasBeenSmelt)
