@@ -1,9 +1,17 @@
+/*
+ * Nick Grinstead
+ * ClickableTarget.cs
+ * This script represents a moving target used in the target mini-game.
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ClickableTarget : MonoBehaviour
 {
+    /// <summary>
+    /// Moves the target and adds points when clicked
+    /// </summary>
     private void OnMouseDown()
     {
         // Calls script to add points
@@ -13,6 +21,9 @@ public class ClickableTarget : MonoBehaviour
         MoveTarget();
     }
 
+    /// <summary>
+    /// Called to move this target to a random position
+    /// </summary>
     public void MoveTarget()
     {
         if (this != null)
@@ -22,6 +33,9 @@ public class ClickableTarget : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called by TargetGame to destroy this target object
+    /// </summary>
     public void DestroyTarget()
     {
         if (this != null)

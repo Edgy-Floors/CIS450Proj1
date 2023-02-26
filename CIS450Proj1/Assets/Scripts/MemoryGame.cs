@@ -1,3 +1,8 @@
+/*
+ * Nick Grinstead
+ * MemoryGame.cs
+ * This script handles the logic for the memory game.
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +14,7 @@ public class MemoryGame : MonoBehaviour
     PlayerControls playerControls;
     InputAction oneKey, twoKey, threeKey, fourKey, fiveKey, sixKey, sevenKey, eightKey, nineKey;
 
-    [SerializeField] PlayerInputs playerInputs;
+    PlayerInputs playerInputs;
 
     int currentIndex = 0;
     int[] inputSequence = new int[4];
@@ -19,6 +24,9 @@ public class MemoryGame : MonoBehaviour
 
     bool inputsActive = false;
 
+    /// <summary>
+    /// Sets up variables and inputs
+    /// </summary>
     private void Awake()
     {
         playerInputs = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputs>();
@@ -47,6 +55,9 @@ public class MemoryGame : MonoBehaviour
         nineKey.performed += ctx => AddToSequence(9);
     }
 
+    /// <summary>
+    /// Starts game by generating a sequence and enabling the UI
+    /// </summary>
     public void StartGame()
     {
         playerInputs.CanMove = false;
@@ -62,6 +73,9 @@ public class MemoryGame : MonoBehaviour
         StartCoroutine(RevealSequence());
     }
 
+    /// <summary>
+    /// Stops the game and compares player inputs to the target sequence
+    /// </summary>
     private void StopGame()
     {
         int totalCorrect = 0;
@@ -83,6 +97,10 @@ public class MemoryGame : MonoBehaviour
         playerInputs.CanMove = true;
     }
 
+    /// <summary>
+    /// Allows player to use number keys to add numbers to their input sequence
+    /// </summary>
+    /// <param name="inputVal">The number they typed</param>
     private void AddToSequence(int inputVal)
     {
         if (inputsActive)
@@ -93,6 +111,7 @@ public class MemoryGame : MonoBehaviour
 
             currentIndex++;
 
+            // Stops the game once a player has typed their full sequence
             if (currentIndex >= targetMemorySequence.Length)
             {
                 inputsActive = false;
@@ -101,6 +120,11 @@ public class MemoryGame : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine that reveals the target sequence to the player one number at
+    /// a time
+    /// </summary>
+    /// <returns>Waits for a specific amount of time</returns>
     IEnumerator RevealSequence()
     {
         yield return new WaitForSeconds(1.5f);

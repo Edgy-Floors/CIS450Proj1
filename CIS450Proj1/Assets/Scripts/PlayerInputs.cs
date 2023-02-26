@@ -68,6 +68,9 @@ public class PlayerInputs : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Calls SmellFlower() on currentFlower if there is a flower to smell
+    /// </summary>
     private void Smell()
     {
         if (currentFlower != null)
@@ -76,6 +79,9 @@ public class PlayerInputs : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates currentFlower's SmellBehavior
+    /// </summary>
     private void Water()
     {
         Debug.Log("A flower was watered!");
@@ -86,6 +92,10 @@ public class PlayerInputs : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets currentFlower when near a flower
+    /// </summary>
+    /// <param name="collision">Data related to a collision</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Flower"))
@@ -94,6 +104,10 @@ public class PlayerInputs : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Clears out currentFlower when walking away from a flower
+    /// </summary>
+    /// <param name="collision">Data related to a collision</param>
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Flower"))

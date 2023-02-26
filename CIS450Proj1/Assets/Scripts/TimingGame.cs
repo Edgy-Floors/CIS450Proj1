@@ -1,3 +1,8 @@
+/*
+ * Nick Grinstead
+ * TimingGame.cs
+ * This script handles the logic for the timing game.
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +12,15 @@ using TMPro;
 public class TimingGame : MonoBehaviour
 {
     [SerializeField] GameObject background, movingBar, targetZone;
-    [SerializeField] PlayerInputs playerInputs;
+    PlayerInputs playerInputs;
     [SerializeField] TextMeshProUGUI instructionsText;
     PlayerControls playerControls;
     InputAction stop;
     MovingBar movingBarScript;
 
+    /// <summary>
+    /// Sets up variables and inputs
+    /// </summary>
     private void Awake()
     {
         movingBarScript = movingBar.GetComponent<MovingBar>();
@@ -27,6 +35,9 @@ public class TimingGame : MonoBehaviour
         playerInputs = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputs>();
     }
 
+    /// <summary>
+    /// Starts the game by enabling the game's UI
+    /// </summary>
     public void StartGame()
     {
         playerInputs.CanMove = false;
@@ -43,6 +54,10 @@ public class TimingGame : MonoBehaviour
         targetZone.transform.localPosition = newTargetPosition;
     }
 
+    /// <summary>
+    /// Stops the moving bar when the player gives an input and then checks if
+    /// they succeeded
+    /// </summary>
     private void StopMovingBar()
     {
         if (movingBarScript.CanMove)
@@ -69,6 +84,10 @@ public class TimingGame : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes the travel direction of the moving bar when it hits the ends of
+    /// the zone
+    /// </summary>
     private void Update()
     {
         if (Mathf.Abs(Vector3.Distance(background.transform.position, movingBar.transform.position)) >= 3)
@@ -76,11 +95,18 @@ public class TimingGame : MonoBehaviour
             movingBar.GetComponent<MovingBar>().TravelDir *= -1;
         }
     }
+
+    /// <summary>
+    /// Enables inputs
+    /// </summary>
     private void OnEnable()
     {
         playerControls.MiniGameActions.Enable();
     }
 
+    /// <summary>
+    /// Disables inputs
+    /// </summary>
     private void OnDisable()
     {
         playerControls.MiniGameActions.Disable();

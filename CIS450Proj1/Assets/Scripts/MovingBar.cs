@@ -1,3 +1,8 @@
+/*
+ * Nick Grinstead
+ * MovingBar.cs
+ * This script handles the behavior of the moving bar used in the timing mini-game.
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +18,9 @@ public class MovingBar : MonoBehaviour
     public int TravelDir { get => travelDir; set => travelDir = value; }
     public bool CanMove { get => canMove; set => canMove = value; }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Moves the bar in a direction based on travelDir
+    /// </summary>
     void Update()
     {
         if (canMove)
@@ -29,11 +36,17 @@ public class MovingBar : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Allows bar to move when enabled
+    /// </summary>
     private void OnEnable()
     {
         CanMove = true;
     }
 
+    /// <summary>
+    /// Stops bar from moving when disabled
+    /// </summary>
     private void OnDisable()
     {
         CanMove = false;
