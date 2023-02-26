@@ -21,6 +21,8 @@ public class MemoryGame : MonoBehaviour
 
     private void Awake()
     {
+        playerInputs = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputs>();
+
         playerControls = new PlayerControls();
         playerControls.MiniGameActions.Enable();
 

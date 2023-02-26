@@ -9,6 +9,8 @@ public class PointsFlower : SmellBehavior
 
     private void Awake()
     {
+        playerInputs = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputs>();
+
         smellBehaviorIndex = 3;
     }
 

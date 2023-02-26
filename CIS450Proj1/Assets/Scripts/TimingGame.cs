@@ -23,6 +23,8 @@ public class TimingGame : MonoBehaviour
         stop = playerControls.FindAction("StopTimingBar");
 
         stop.performed += ctx => StopMovingBar();
+
+        playerInputs = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputs>();
     }
 
     public void StartGame()

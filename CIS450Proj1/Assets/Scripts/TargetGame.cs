@@ -19,6 +19,8 @@ public class TargetGame : MonoBehaviour
     private void Awake()
     {
         targetArray = new ClickableTarget[maxTargets];
+
+        playerInputs = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInputs>();
     }
 
     public void StartGame()
