@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class TimingGame : MonoBehaviour
 {
     [SerializeField] GameObject background, movingBar, targetZone;
     [SerializeField] PlayerInputs playerInputs;
+    [SerializeField] TextMeshProUGUI instructionsText;
     PlayerControls playerControls;
     InputAction stop;
     MovingBar movingBarScript;
@@ -25,9 +27,12 @@ public class TimingGame : MonoBehaviour
 
     public void StartGame()
     {
+        playerInputs.CanMove = false;
+
         background.SetActive(true);
         movingBar.SetActive(true);
         targetZone.SetActive(true);
+        instructionsText.enabled = true;
 
         movingBar.GetComponent<MovingBar>().enabled = true;
 
@@ -58,6 +63,7 @@ public class TimingGame : MonoBehaviour
             background.SetActive(false);
             movingBar.SetActive(false);
             targetZone.SetActive(false);
+            instructionsText.enabled = false;
         }
     }
 

@@ -47,13 +47,15 @@ public class MemoryGame : MonoBehaviour
 
     public void StartGame()
     {
+        playerInputs.CanMove = false;
+
         for (int i = 0; i < targetMemorySequence.Length; ++i)
         {
             targetMemorySequence[i] = Random.Range(1, 10);
         }
 
         memorySequenceText.enabled = true;
-        memorySequenceText.text = "Remember the Following Sequence:\n";
+        memorySequenceText.text = "Remember this 4 Number Sequence:\n";
 
         StartCoroutine(RevealSequence());
     }
@@ -73,7 +75,7 @@ public class MemoryGame : MonoBehaviour
         // Would add points here based on totalCorrect
         Debug.Log("You got " + totalCorrect + " matches");
 
-        memorySequenceText.text = "Memory Sequence:\n";
+        memorySequenceText.text = "Remember this 4 Number Sequence:\n";
         memorySequenceText.enabled = false;
 
         playerInputs.CanMove = true;
@@ -111,7 +113,7 @@ public class MemoryGame : MonoBehaviour
         inputsActive = true;
         currentIndex = 0;
 
-        memorySequenceText.text = "Repeat the Sequence:\n";
+        memorySequenceText.text = "Repeat the Sequence using the Number Keys:\n";
 
         StopCoroutine(RevealSequence());
     }

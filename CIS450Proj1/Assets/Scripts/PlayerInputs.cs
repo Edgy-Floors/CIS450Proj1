@@ -72,7 +72,6 @@ public class PlayerInputs : MonoBehaviour
     {
         if (currentFlower != null)
         {
-            CanMove = false;
             currentFlower.SmellFlower();
         }
     }
@@ -92,6 +91,14 @@ public class PlayerInputs : MonoBehaviour
         if (collision.gameObject.CompareTag("Flower"))
         {
             currentFlower = collision.gameObject.GetComponent<Flower>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Flower"))
+        {
+            currentFlower = null;
         }
     }
 

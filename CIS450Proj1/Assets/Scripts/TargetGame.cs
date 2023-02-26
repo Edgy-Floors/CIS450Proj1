@@ -23,6 +23,8 @@ public class TargetGame : MonoBehaviour
 
     public void StartGame()
     {
+        playerInputs.CanMove = false;
+
         for (int i = 0; i < maxTargets; ++i)
         {
             targetArray[i] = Instantiate(targetPrefab).GetComponent<ClickableTarget>();
@@ -33,7 +35,7 @@ public class TargetGame : MonoBehaviour
         timePassed = 0;
 
         timer.enabled = true;
-        timer.text = timeLimit.ToString();
+        timer.text = "Click the Targets!\nRemaining Time:\n" + timeLimit.ToString();
 
         StartCoroutine(GameTimer());
     }
@@ -64,7 +66,7 @@ public class TargetGame : MonoBehaviour
         {
             timePassed += 1;
 
-            timer.text = (timeLimit - timePassed).ToString();
+            timer.text = "Click the Targets!\nRemaining Time:\n" + (timeLimit - timePassed).ToString();
 
             if (timePassed >= timeLimit)
             {
