@@ -34511,12 +34511,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 5
   runSpeed: 10
-<<<<<<< HEAD
+
   points: 0
   tmp: {fileID: 469907762}
-=======
   currentFlower: {fileID: 0}
->>>>>>> 152801cb6ac7a28ec3d7bef5ee48bc42f729f198
+
 --- !u!212 &2115640502
 SpriteRenderer:
   m_ObjectHideFlags: 0

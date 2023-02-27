@@ -21,7 +21,6 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] float runSpeed;
 
     [SerializeField] Flower currentFlower;
-
     // Below will be removed soon - currently just for playtesting
     public int points = 0;
     public TextMeshProUGUI tmp;
