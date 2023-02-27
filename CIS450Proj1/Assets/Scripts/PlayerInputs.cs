@@ -19,7 +19,7 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] float baseSpeed;
     [SerializeField] float runSpeed;
 
-    Flower currentFlower;
+    [SerializeField] Flower currentFlower;
 
     public bool CanMove { get => canMove; set => canMove = value; }
 

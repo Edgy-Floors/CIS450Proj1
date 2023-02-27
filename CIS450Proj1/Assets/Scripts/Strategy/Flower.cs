@@ -9,13 +9,10 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
-    SmellBehavior smellBehavior;
+    public SmellBehavior smellBehavior;
     bool hasBeenWatered = false;
 
-    /// <summary>
-    /// Sets initial variable with initial SmellBehavior
-    /// </summary>
-    private void Awake()
+    public void GetSmellBehavior()
     {
         smellBehavior = GetComponent<SmellBehavior>();
     }
@@ -32,6 +29,10 @@ public class Flower : MonoBehaviour
             Debug.Log("A flower was smelt");
 
             Destroy(this.gameObject);
+        }
+        else
+        {
+            Debug.Log("No smell");
         }
     }
 
@@ -79,6 +80,8 @@ public class Flower : MonoBehaviour
                     smellBehavior = gameObject.AddComponent<PointsFlower>();
                     break;
             }
+
+            hasBeenWatered = true;
         }
     }
 }

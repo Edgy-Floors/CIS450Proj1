@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 5245840920724553468}
   - component: {fileID: 5245840920724553469}
   - component: {fileID: 5245840920724553471}
-  - component: {fileID: 5245840920724553441}
   - component: {fileID: 5245840920724553470}
   m_Layer: 0
-  m_Name: TimingFlower
+  m_Name: OrangeFlower
   m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,19 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5496f9f533d02e94a848bc4f603e0f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5245840920724553441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5245840920724553466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc196b8af17b6846bb05cc5b59d22e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smellBehaviorIndex: -1
 --- !u!61 &5245840920724553470
 BoxCollider2D:
   m_ObjectHideFlags: 0
