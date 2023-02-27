@@ -11,7 +11,7 @@ public class FlowerData : MonoBehaviour, ISubject
     public int goodCcount = 0;
 
     [Tooltip("Amount of points acquired from smelling flowers.")]
-    public int points = 0;
+    public int points = 10;
 
     [Tooltip("Text to update on UI for the counter.")]
     public TextMeshProUGUI txt;

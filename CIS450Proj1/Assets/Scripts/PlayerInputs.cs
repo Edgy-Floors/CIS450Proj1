@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -19,7 +20,11 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] float baseSpeed;
     [SerializeField] float runSpeed;
 
-    Flower currentFlower;
+    [SerializeField] Flower currentFlower;
+
+    // Below will be removed soon - currently just for playtesting
+    public int points = 0;
+    public TextMeshProUGUI tmp;
 
     public bool CanMove { get => canMove; set => canMove = value; }
 
@@ -76,6 +81,8 @@ public class PlayerInputs : MonoBehaviour
         if (currentFlower != null)
         {
             currentFlower.SmellFlower();
+            points += 10;
+            tmp.text = "Points: " + points;
         }
     }
 
