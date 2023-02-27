@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IObserver
 {
-    public void updateCount();
+    public void updateCount(int count);
 }

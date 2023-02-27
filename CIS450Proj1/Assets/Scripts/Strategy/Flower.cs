@@ -30,6 +30,8 @@ public class Flower : MonoBehaviour
             smellBehavior.Smell();
 
             Debug.Log("A flower was smelt");
+
+            Destroy(this.gameObject);
         }
     }
 

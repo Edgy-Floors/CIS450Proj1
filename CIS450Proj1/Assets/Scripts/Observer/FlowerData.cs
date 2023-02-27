@@ -20,14 +20,14 @@ public class FlowerData : MonoBehaviour, ISubject
     {
         foreach(IObserver x in obs)
         {
-            x.updateCount();
+            x.updateCount(points);
         }
     }
 
     public void startObserve(IObserver o)
     {
         obs.Add(o);
-        o.updateCount();
+        o.updateCount(points);
     }
 
     public void stopObserve(IObserver o)
