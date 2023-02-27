@@ -6,6 +6,9 @@ public class Enemy : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Player is taking damage!");
+        if (collision.CompareTag("Player") && collision.isTrigger == false)
+        {
+            collision.gameObject.GetComponent<HealthSystem>().TakeDamage();
+        }
     }
 }
