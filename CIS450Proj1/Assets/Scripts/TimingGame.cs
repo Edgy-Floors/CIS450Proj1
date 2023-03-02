@@ -47,6 +47,7 @@ public class TimingGame : MonoBehaviour
         targetZone.SetActive(true);
         instructionsText.enabled = true;
 
+        movingBar.transform.localPosition = Vector2.zero;
         movingBar.GetComponent<MovingBar>().enabled = true;
 
         Vector2 newTargetPosition = targetZone.transform.localPosition;

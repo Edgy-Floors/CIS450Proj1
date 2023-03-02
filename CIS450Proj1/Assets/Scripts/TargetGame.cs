@@ -58,6 +58,8 @@ public class TargetGame : MonoBehaviour
     /// </summary>
     private void StopGame()
     {
+        StopAllCoroutines();
+
         for (int i = 0; i < maxTargets; ++i)
         {
             targetArray[i].DestroyTarget();
@@ -97,7 +99,7 @@ public class TargetGame : MonoBehaviour
             {
                 StopGame();
 
-                StopCoroutine(GameTimer());
+                //StopCoroutine(GameTimer());
             }
 
             // Checks if targets should update
