@@ -14,6 +14,8 @@ public class FlowerSpawner : MonoBehaviour
     [SerializeField] private GameObject[] flowers = new GameObject[4];
     private const int zCoord = 0;
 
+    public Sprite[] flowerSprites = new Sprite[4];
+
     [Tooltip("The min X coordinate the flowers can spawn")]
     public int minX;
     [Tooltip("The main Y coordinate the flowers can spawn")]
@@ -37,27 +39,32 @@ public class FlowerSpawner : MonoBehaviour
 
             GameObject _temp = Instantiate(flowers[_randFlower], _spawnPos, Quaternion.identity);
 
+            SpriteRenderer tempSR = _temp.GetComponent<SpriteRenderer>();
+
             _Tempflowerscript = _temp.GetComponent<Flower>();
+            SmellBehavior tempSmellBehavior = null;
 
             switch (_randSmellBehavior)
             {
                 case 0:
-                    _temp.AddComponent<MemoryFlower>();
+                    tempSmellBehavior = _temp.AddComponent<MemoryFlower>();
                     _Tempflowerscript.GetSmellBehavior();
                     break;
                 case 1:
-                    _temp.AddComponent<PointsFlower>();
+                    tempSmellBehavior = _temp.AddComponent<PointsFlower>();
                     _Tempflowerscript.GetSmellBehavior();
                     break;
                 case 2:
-                    _temp.AddComponent<TargetFlower>();
+                    tempSmellBehavior = _temp.AddComponent<TargetFlower>();
                     _Tempflowerscript.GetSmellBehavior();
                     break;
                 case 3:
-                    _temp.AddComponent<TimingFlower>();
+                    tempSmellBehavior = _temp.AddComponent<TimingFlower>();
                     _Tempflowerscript.GetSmellBehavior();
                     break;
             }
+
+            tempSR.sprite = flowerSprites[tempSmellBehavior.smellBehaviorIndex];
         }
     }
 }

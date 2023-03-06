@@ -11,6 +11,13 @@ public class Flower : MonoBehaviour, IObserver
 {
     public SmellBehavior smellBehavior;
     bool hasBeenWatered = false;
+    FlowerSpawner flowerSpawner;
+
+    private void Awake()
+    {
+
+        flowerSpawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<FlowerSpawner>();
+    }
 
     public void GetSmellBehavior()
     {
@@ -85,6 +92,8 @@ public class Flower : MonoBehaviour, IObserver
                     smellBehavior = gameObject.AddComponent<PointsFlower>();
                     break;
             }
+
+            gameObject.GetComponent<SpriteRenderer>().sprite = flowerSpawner.flowerSprites[smellBehavior.smellBehaviorIndex];
 
             hasBeenWatered = true;
         }
