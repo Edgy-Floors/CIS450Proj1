@@ -26,6 +26,7 @@ public class PlayerInputs : MonoBehaviour
     public TextMeshProUGUI tmp;
 
     public bool CanMove { get => canMove; set => canMove = value; }
+    private Rigidbody2D rb;
 
     /// <summary>
     /// Sets up inputs on Awake
@@ -48,27 +49,28 @@ public class PlayerInputs : MonoBehaviour
 
         smell.performed += ctx => Smell();
         water.performed += ctx => Water();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     /// <summary>
     /// Has the character move at one of two speeds based on isRunning
     /// </summary>
-    private void Update()
+    private void FixedUpdate()
     {
         Vector2 moveVelocity;
 
         if (isRunning)
         {
-            moveVelocity = moveDirection * runSpeed * Time.deltaTime;
+            moveVelocity = moveDirection * runSpeed * Time.fixedDeltaTime;
         }
         else
         {
-            moveVelocity = moveDirection * baseSpeed * Time.deltaTime;
+            moveVelocity = moveDirection * baseSpeed * Time.fixedDeltaTime;
         }
 
         if (CanMove)
         {
-            transform.Translate(moveVelocity);
+            rb.velocity = moveVelocity;
         }
     }
 
