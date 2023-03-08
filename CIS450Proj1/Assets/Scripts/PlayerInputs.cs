@@ -12,13 +12,13 @@ using TMPro;
 public class PlayerInputs : MonoBehaviour
 {
     PlayerControls playerControls;
-    InputAction walk, run, smell, water;
+    InputAction walk, smell, water;
 
-    bool isRunning = false;
+    //bool isRunning = false;
     bool canMove = true;
     Vector2 moveDirection;
     [SerializeField] float baseSpeed;
-    [SerializeField] float runSpeed;
+    //[SerializeField] float runSpeed;
 
     [SerializeField] Flower currentFlower;
     // Below will be removed soon - currently just for playtesting
@@ -37,15 +37,15 @@ public class PlayerInputs : MonoBehaviour
         playerControls.BasicActions.Enable();
 
         walk = playerControls.FindAction("Walk");
-        run = playerControls.FindAction("Run");
+        //run = playerControls.FindAction("Run");
         smell = playerControls.FindAction("Smell");
         water = playerControls.FindAction("Water");
 
         walk.performed += ctx => moveDirection = ctx.ReadValue<Vector2>();
         walk.canceled += ctx => moveDirection = ctx.ReadValue<Vector2>();
 
-        run.performed += ctx => isRunning = true;
-        run.canceled += ctx => isRunning = false;
+        //run.performed += ctx => isRunning = true;
+        //run.canceled += ctx => isRunning = false;
 
         smell.performed += ctx => Smell();
         water.performed += ctx => Water();
@@ -59,15 +59,8 @@ public class PlayerInputs : MonoBehaviour
     {
         Vector2 moveVelocity;
 
-        if (isRunning)
-        {
-            moveVelocity = moveDirection * runSpeed * Time.fixedDeltaTime;
-        }
-        else
-        {
-            moveVelocity = moveDirection * baseSpeed * Time.fixedDeltaTime;
-        }
-
+        moveVelocity = moveDirection * baseSpeed * Time.fixedDeltaTime;
+        
         if (CanMove)
         {
             rb.velocity = moveVelocity;

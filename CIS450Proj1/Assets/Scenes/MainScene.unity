@@ -47231,8 +47231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51d6ad560eac16b4e84512b2fa92d425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 5
-  runSpeed: 10
+  baseSpeed: 200
   currentFlower: {fileID: 0}
   points: 0
   tmp: {fileID: 469907762}
@@ -47332,7 +47331,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
