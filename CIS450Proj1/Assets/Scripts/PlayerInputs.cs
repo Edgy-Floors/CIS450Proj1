@@ -74,6 +74,7 @@ public class PlayerInputs : MonoBehaviour
     {
         if (currentFlower != null)
         {
+            rb.velocity = Vector2.zero;
             currentFlower.SmellFlower();
             //points += 10;
             //tmp.text = "Points: " + points;
