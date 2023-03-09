@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flower : MonoBehaviour, IObserver
+public class Flower : MonoBehaviour
 {
     public SmellBehavior smellBehavior;
     bool hasBeenWatered = false;
@@ -22,11 +22,6 @@ public class Flower : MonoBehaviour, IObserver
     public void GetSmellBehavior()
     {
         smellBehavior = GetComponent<SmellBehavior>();
-    }
-
-    public void updateCount(int count)
-    {
-
     }
 
     /// <summary>

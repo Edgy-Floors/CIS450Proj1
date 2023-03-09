@@ -45,6 +45,7 @@ public class TimingGame : MonoBehaviour
         background.SetActive(true);
         movingBar.SetActive(true);
         targetZone.SetActive(true);
+        instructionsText.text = "Press Space to Stop the Bar in the Target Zone!";
         instructionsText.enabled = true;
 
         movingBar.transform.localPosition = Vector2.zero;
@@ -67,22 +68,27 @@ public class TimingGame : MonoBehaviour
 
             if (Mathf.Abs(Vector3.Distance(targetZone.transform.position, movingBar.transform.position)) <= 0.5f)
             {
-                // call script to add points
+                GameObject.FindGameObjectWithTag("Subject").GetComponent<FlowerData>().updateScore(15);
 
-                Debug.Log("You won the timeing game!");
+                instructionsText.text = "You won the mini-game!";
             }
             else
             {
-                Debug.Log("You lost the timing game");
+                instructionsText.text = "You missed the target.";
             }
 
-            playerInputs.CanMove = true;
-
-            background.SetActive(false);
-            movingBar.SetActive(false);
-            targetZone.SetActive(false);
-            instructionsText.enabled = false;
+            Invoke("StopGame", 1.2f);
         }
+    }
+
+    private void StopGame()
+    {
+        playerInputs.CanMove = true;
+
+        background.SetActive(false);
+        movingBar.SetActive(false);
+        targetZone.SetActive(false);
+        instructionsText.enabled = false;
     }
 
     /// <summary>

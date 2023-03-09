@@ -14,9 +14,7 @@ public class ClickableTarget : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        // Calls script to add points
-
-        Debug.Log("A target was hit");
+        GameObject.FindGameObjectWithTag("Subject").GetComponent<FlowerData>().updateScore(1);
 
         MoveTarget();
     }

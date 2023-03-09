@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinMessage : MonoBehaviour
+public class WinMessage : MonoBehaviour, IObserver
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        GameObject.FindGameObjectWithTag("Subject").GetComponent<ISubject>().startObserve(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void updateCount(int count, int target)
     {
-        
+        if (count >= target)
+        {
+            // reveal win message
+        }
     }
 }

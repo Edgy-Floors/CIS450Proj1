@@ -29,7 +29,7 @@ public class PointsFlower : SmellBehavior
     {
         if (!hasBeenSmelt)
         {
-            // call FlowerData to add points
+            GameObject.FindGameObjectWithTag("Subject").GetComponent<FlowerData>().updateScore(10);
 
             playerInputs.CanMove = true;
 

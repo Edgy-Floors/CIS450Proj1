@@ -48,7 +48,7 @@ public class TargetGame : MonoBehaviour
         timePassed = 0;
 
         timer.enabled = true;
-        timer.text = "Click the Targets!\nRemaining Time:\n" + timeLimit.ToString();
+        timer.text = "Get points for every target you click!\nRemaining Time:\n" + timeLimit.ToString();
 
         StartCoroutine(GameTimer());
     }
@@ -92,14 +92,12 @@ public class TargetGame : MonoBehaviour
         {
             timePassed += 1;
 
-            timer.text = "Click the Targets!\nRemaining Time:\n" + (timeLimit - timePassed).ToString();
+            timer.text = "Get points for every target you click!\nRemaining Time:\n" + (timeLimit - timePassed).ToString();
 
             // Checks to see if game is over
             if (timePassed >= timeLimit)
             {
                 StopGame();
-
-                //StopCoroutine(GameTimer());
             }
 
             // Checks if targets should update

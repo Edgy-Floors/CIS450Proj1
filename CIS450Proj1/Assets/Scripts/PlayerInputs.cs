@@ -22,8 +22,8 @@ public class PlayerInputs : MonoBehaviour
 
     [SerializeField] Flower currentFlower;
     // Below will be removed soon - currently just for playtesting
-    public int points = 0;
-    public TextMeshProUGUI tmp;
+    //public int points = 0;
+    //public TextMeshProUGUI tmp;
 
     public bool CanMove { get => canMove; set => canMove = value; }
     private Rigidbody2D rb;
@@ -75,8 +75,8 @@ public class PlayerInputs : MonoBehaviour
         if (currentFlower != null)
         {
             currentFlower.SmellFlower();
-            points += 10;
-            tmp.text = "Points: " + points;
+            //points += 10;
+            //tmp.text = "Points: " + points;
         }
     }
 

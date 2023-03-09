@@ -88,9 +88,14 @@ public class MemoryGame : MonoBehaviour
             }
         }
 
-        // Would add points here based on totalCorrect
-        Debug.Log("You got " + totalCorrect + " matches");
+        memorySequenceText.text = "You got " + totalCorrect + " correct!\n+" + totalCorrect * 5 + " points";
+        GameObject.FindGameObjectWithTag("Subject").GetComponent<FlowerData>().updateScore(5 * totalCorrect);
 
+        Invoke("Reset", 1.2f);
+    }
+
+    private void Reset()
+    {
         memorySequenceText.text = "Remember this 4 Number Sequence:\n";
         memorySequenceText.enabled = false;
 
