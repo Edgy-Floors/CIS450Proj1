@@ -31,6 +31,8 @@ public class PlayerInputs : MonoBehaviour
     public Animator animator;
     Vector2 movement;
 
+    public AudioSource waterNoise;
+
     /// <summary>
     /// Sets up inputs on Awake
     /// </summary>
@@ -86,8 +88,6 @@ public class PlayerInputs : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             currentFlower.SmellFlower();
-            //points += 10;
-            //tmp.text = "Points: " + points;
         }
     }
 
@@ -97,6 +97,8 @@ public class PlayerInputs : MonoBehaviour
     private void Water()
     {
         Debug.Log("A flower was watered!");
+
+        waterNoise.Play();
         
         if (currentFlower != null)
         {
