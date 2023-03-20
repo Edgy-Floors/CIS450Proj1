@@ -11,15 +11,9 @@ public class Flower : MonoBehaviour
 {
     public SmellBehavior smellBehavior;
     bool hasBeenWatered = false;
-    FlowerSpawner flowerSpawner;
+    public Sprite[] flowerSprites = new Sprite[4];
 
     private void Awake()
-    {
-
-        flowerSpawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<FlowerSpawner>();
-    }
-
-    public void GetSmellBehavior()
     {
         smellBehavior = GetComponent<SmellBehavior>();
     }
@@ -72,24 +66,25 @@ public class Flower : MonoBehaviour
             {
                 case 0:
                     smellBehavior = gameObject.AddComponent<TimingFlower>();
+                    gameObject.GetComponent<SpriteRenderer>().sprite = flowerSprites[0];
                     break;
 
                 case 1:
                     smellBehavior = gameObject.AddComponent<TargetFlower>();
+                    gameObject.GetComponent<SpriteRenderer>().sprite = flowerSprites[1];
                     break;
 
                 case 2:
                     smellBehavior = gameObject.AddComponent<MemoryFlower>();
+                    gameObject.GetComponent<SpriteRenderer>().sprite = flowerSprites[2];
                     break;
 
                 case 3:
                 default:
                     smellBehavior = gameObject.AddComponent<PointsFlower>();
+                    gameObject.GetComponent<SpriteRenderer>().sprite = flowerSprites[3];
                     break;
             }
-
-            gameObject.GetComponent<SpriteRenderer>().sprite = flowerSpawner.flowerSprites[smellBehavior.smellBehaviorIndex];
-
             hasBeenWatered = true;
         }
     }
