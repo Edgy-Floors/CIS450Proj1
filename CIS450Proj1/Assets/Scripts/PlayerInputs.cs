@@ -28,6 +28,9 @@ public class PlayerInputs : MonoBehaviour
     public bool CanMove { get => canMove; set => canMove = value; }
     private Rigidbody2D rb;
 
+    public Animator animator;
+    Vector2 movement;
+
     /// <summary>
     /// Sets up inputs on Awake
     /// </summary>
@@ -57,6 +60,13 @@ public class PlayerInputs : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
         Vector2 moveVelocity;
 
         moveVelocity = moveDirection * baseSpeed * Time.fixedDeltaTime;
