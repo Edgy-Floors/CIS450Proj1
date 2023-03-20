@@ -38,7 +38,6 @@ public class FlowerSpawner : MonoBehaviour
         for (int i = 0; i < flowerAmount; i++)
         {
             int _randFlower = Random.Range(0, flowerTypes.Length - 1);
-            Debug.Log(_randFlower);
 
             Vector3 _spawnPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
 
