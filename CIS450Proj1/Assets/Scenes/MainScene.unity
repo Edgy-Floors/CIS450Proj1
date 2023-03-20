@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 283444582}
   m_Layer: 0
   m_Name: Success
-  m_TagString: Untagged
+  m_TagString: success
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1754,7 +1754,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3798499522915700535, guid: 0394f9011a0b8dd4da9aa9feedd7b10f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3798499522915700535, guid: 0394f9011a0b8dd4da9aa9feedd7b10f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2641,6 +2641,7 @@ MonoBehaviour:
   baseSpeed: 220
   currentFlower: {fileID: 0}
   animator: {fileID: 974166018}
+  waterNoise: {fileID: 1560006026}
 --- !u!50 &974166020
 Rigidbody2D:
   serializedVersion: 4
@@ -4762,6 +4763,8 @@ MonoBehaviour:
   movingBar: {fileID: 958881731}
   targetZone: {fileID: 1491920099}
   instructionsText: {fileID: 1501909191}
+  success: {fileID: 0}
+  fail: {fileID: 0}
 --- !u!4 &1191091642
 Transform:
   m_ObjectHideFlags: 0
@@ -5619,7 +5622,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491920099
 GameObject:
@@ -6066,7 +6069,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1613403268
 MonoBehaviour:
@@ -6312,7 +6315,7 @@ GameObject:
   - component: {fileID: 1689796389}
   m_Layer: 0
   m_Name: Fail
-  m_TagString: Untagged
+  m_TagString: fail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51740,6 +51743,7 @@ MonoBehaviour:
   baseSpeed: 220
   currentFlower: {fileID: 0}
   animator: {fileID: 0}
+  waterNoise: {fileID: 0}
 --- !u!212 &2115640502
 SpriteRenderer:
   m_ObjectHideFlags: 0

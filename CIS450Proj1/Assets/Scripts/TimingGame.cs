@@ -17,6 +17,17 @@ public class TimingGame : MonoBehaviour
     PlayerControls playerControls;
     InputAction stop;
     MovingBar movingBarScript;
+    AudioSource success;
+    AudioSource fail;
+
+    /// <summary>
+    /// Assigns audioSource components
+    /// </summary>
+    private void Start()
+    {
+        success = GameObject.FindGameObjectWithTag("success").GetComponent<AudioSource>();
+        fail = GameObject.FindGameObjectWithTag("fail").GetComponent<AudioSource>();
+    }
 
     /// <summary>
     /// Sets up variables and inputs
@@ -71,10 +82,12 @@ public class TimingGame : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Subject").GetComponent<FlowerData>().updateScore(15);
 
                 instructionsText.text = "You won the mini-game!";
+                success.Play();
             }
             else
             {
                 instructionsText.text = "You missed the target.";
+                fail.Play();
             }
 
             Invoke("StopGame", 1.2f);

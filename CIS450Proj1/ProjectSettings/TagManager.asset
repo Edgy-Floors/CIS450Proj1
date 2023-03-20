@@ -8,6 +8,8 @@ TagManager:
   - TimingGame
   - Spawner
   - Subject
+  - success
+  - fail
   layers:
   - Default
   - TransparentFX
